@@ -8,11 +8,18 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-    const reversed = str.split('').reverse().join('')
-    
-    return str === reversed
-    //above is a boolean statement. If they are the same, they will return true.
-    //if not, they will return false
+    return str.split('').every((char, i) => {
+        return char === str[str.length - i - 1]
+    })
 }
 
 module.exports = palindrome;
+
+
+// function palindrome(str) {
+//     const reversed = str.split('').reverse().join('')
+    
+//     return str === reversed
+//     //above is a boolean statement. If they are the same, they will return true.
+//     //if not, they will return false
+// }
